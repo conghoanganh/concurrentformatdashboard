@@ -1,21 +1,7 @@
-function mergeTwoLists(l1, l2) {
-  const dummy = new ListNode();
-  let current = dummy;
-  while (l1 !== null && l2 !== null) {
-    if (l1.val < l2.val) {
-      current.next = l1;
-      l1 = l1.next;
-    } else {
-      current.next = l2;
-      l2 = l2.next;
-    }
-    current = current.next;
-  }
-  if (l1 !== null) {
-    current.next = l1;
-  }
-  if (l2 !== null) {
-    current.next = l2;
-  }
-  return dummy.next;
-}
+// Alice should have the initial balance minus tranfer amount
+if (aliceBalanceAfter[0].amount !== ALICE_INITIAL_BALANCE - TRANSFER_AMOUNT)
+  throw new Error("Alice's balance after transfer is incorrect");
+
+// Sponsor should have the initial balance minus gas
+if (sponsorBalanceAfter[0].amount >= SPONSOR_INITIAL_BALANCE)
+  throw new Error("Sponsor's balance after transfer is incorrect");
